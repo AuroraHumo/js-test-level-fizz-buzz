@@ -1,6 +1,8 @@
 
 let button = document.getElementById('btn')
 let resultDiv = document.getElementById('result')
+let historialDiv = document.getElementById('historial')
+let historial = []
 
 //events
 
@@ -25,11 +27,16 @@ function validacion() {
         }
 
         resultDiv.innerHTML = result
+
+        createObject(input, result)
+
+        historialDiv.innerHTML = historial
     }
 
+function createObject(input, result){
 
-function createObject(){
-
-        let historial = {}
-        let numberActual = [input.value, result]
+        let numberActual = [input, result]
+        historial.push(numberActual)
 }
+
+//try catch 
